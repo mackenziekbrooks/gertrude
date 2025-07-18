@@ -12,6 +12,16 @@ markdown: kramdown
 sass:
   style: :compressed
 
+collections_dir: editions
+
+collections:
+  letters:
+    output: true
+    sort_by: order
+  transcriptions:
+    output: true
+
+
 # Defaults
 defaults:
   - scope:
