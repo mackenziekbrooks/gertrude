@@ -1,0 +1,74 @@
+{%- assign url = '/' | prepend: site.baseurl | prepend: site.url -%}
+{%- assign title = site.title -%}
+{%- assign description = site.description -%}
+{%- assign image = '/assets/img/image.jpg' | prepend: site.baseurl | prepend: site.url -%}
+
+{%- if page.url != '/' -%}
+  {%- if page.url -%}
+    {%- assign url = page.url | prepend: site.baseurl | prepend: site.url -%}
+  {%- endif -%}
+  {%- if page.title -%}
+    {%- assign title = page.title | append: ' | ' | append: site.title  -%}
+  {%- endif -%}
+  {%- if page.description -%}
+    {%- assign description = page.description -%}
+  {%- endif -%}
+{%- endif -%}
+
+<!doctype html>
+<html lang="en">
+ {% include head-map.html %}
+  <body>
+{% include header.html %}
+    <div class="container-md">
+      <h1>{{ page.title }}</h1>
+    <div id="map"></div>
+    <hr />
+    {{ content }}
+  </div>
+
+  
+
+{% include footer.html %}
+    <script src="{{ '/assets/js/script.js' | prepend: site.baseurl }}"></script>
+    <script>
+      var map = L.map('map').setView([37.781091193577794, -79.44561074272947], 8);
+      L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    maxZoom: 19,
+    attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+      }).addTo(map);
+
+
+
+
+// Read markers data from data.csv
+  $.get('places.csv', function(csvString) {
+
+    // Use PapaParse to convert string to array of objects
+    var data = Papa.parse(csvString, {header: true, dynamicTyping: true}).data;
+
+    // For each row in data, create a marker and add it to the map
+    // For each row, columns `Latitude`, `Longitude`, and `Title` are required
+    for (var i in data) {
+      var row = data[i];
+
+      var marker = L.marker([row.Latitude, row.Longitude], {
+        opacity: 1
+      }).bindPopup(row.Name);
+      
+      marker.addTo(map);
+    }
+
+  });
+
+  function onEachFeature(feature, layer) {
+    // does this feature have a property named popupContent?
+    if (feature.properties && feature.properties.popupContent) {
+        layer.bindPopup(feature.properties.popupContent);
+    }
+}      
+
+
+    </script>
+  </body>
+</html>

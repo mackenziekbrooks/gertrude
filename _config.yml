@@ -1,0 +1,28 @@
+# Site settings
+title: Gertude Digital Edition Platform
+description: A lightweight digital edition platform that combines Jekyll, Bootstrap, and CETEIcean.
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "" # the base hostname & protocol for your site, e.g. http://example.com
+
+
+# Build settings
+markdown: kramdown
+
+# SASS
+sass:
+  style: :compressed
+
+# Defaults
+defaults:
+  - scope:
+      path: "*"
+    values:
+      layout: default
+
+# Exclude
+exclude:
+  - assets/js/bootstrap.bundle.min.js
+  - Gemfile
+  - Gemfile.lock
+  - LICENSE
+  - README.md

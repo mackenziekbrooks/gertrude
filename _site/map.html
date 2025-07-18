@@ -1,0 +1,399 @@
+<!doctype html>
+<html lang="en">
+   <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="title" content="Places + Map | Gertude Digital Edition Platform">
+    <meta name="description" content="A Jekyll starter project for GitHub Pages with Bootstrap 5 baked right in.">
+    <meta name="image" content="http://localhost:4000/assets/img/image.jpg">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Gertude Digital Edition Platform">
+    <meta property="og:url" content="http://localhost:4000/map.html">
+    <meta property="og:title" content="Places + Map | Gertude Digital Edition Platform">
+    <meta property="og:description" content="A Jekyll starter project for GitHub Pages with Bootstrap 5 baked right in.">
+    <meta property="og:image" content="http://localhost:4000/assets/img/image.jpg">
+    <meta property="og:image:type" content="image/jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Gertude Digital Edition Platform">
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="http://localhost:4000/map.html">
+    <meta property="twitter:title" content="Places + Map | Gertude Digital Edition Platform">
+    <meta property="twitter:description" content="A Jekyll starter project for GitHub Pages with Bootstrap 5 baked right in.">
+    <meta property="twitter:site" content="@">
+    <meta property="twitter:image" content="http://localhost:4000/assets/img/image.jpg">
+    <link rel="shortcut icon" href="/favicon.ico">
+
+    <link rel="stylesheet" href="/assets/css/style.css">
+    
+
+    <link rel="stylesheet" href="/assets/css/CETEIcean.css">
+     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+     integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+     crossorigin=""/>
+      <!-- Make sure you put this AFTER Leaflet's CSS -->
+ <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+     integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+     crossorigin=""></script>
+       <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/papaparse@5.3.0/papaparse.min.js"></script>
+
+
+    
+    <title>Gertude Digital Edition Platform | Places + Map</title>
+  
+
+  </head>
+  <body>
+<nav class="navbar navbar-dark navbar-expand-lg bg-body-tertiary">
+  <div class="container-fluid">
+      <a class="navbar-brand text-white" href="/"><img src="/assets/img/noun-book.png"> Gertude Digital Edition Platform</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link" aria-current="page" href="/index.html">Home</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            About
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="/about.html">About</a></li>
+            <li><a class="dropdown-item" href="/encoding-guidelines.html">Encoding Guidelines</a></li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Texts
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">All Texts</a></li>
+            <li><a class="dropdown-item" href="/proceedings/">RHS Proceedings</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="/personography.html/">Personography</a></li>
+            <li><a class="dropdown-item" href="/map.html/">Places + Map</a></li>
+
+          </ul>
+        </li>
+
+      </ul>
+
+    </div>
+  </div>
+</nav>
+
+    <div class="container-md">
+      <h1>Places + Map</h1>
+    <div id="map"></div>
+    <hr />
+    <h1>Places</h1>
+
+<ul class="list-group">
+	
+  <li class="list-group-item">
+<strong>  Balcony Falls, VA</strong><br />
+ ID: <br />
+ Reference: <a href="" target="_new"></a><br />
+ Occupation: <br />
+ 
+ Found in: <a href="">Link</a>
+</li>
+
+
+  <li class="list-group-item">
+<strong>  Boston, MA</strong><br />
+ ID: <br />
+ Reference: <a href="" target="_new"></a><br />
+ Occupation: <br />
+ 
+ Found in: <a href="">Link</a>
+</li>
+
+
+  <li class="list-group-item">
+<strong>  Buena Vista, VA</strong><br />
+ ID: <br />
+ Reference: <a href="" target="_new"></a><br />
+ Occupation: <br />
+ 
+ Found in: <a href="">Link</a>
+</li>
+
+
+  <li class="list-group-item">
+<strong>  Chesapeake Bay Bridge, VA</strong><br />
+ ID: <br />
+ Reference: <a href="" target="_new"></a><br />
+ Occupation: <br />
+ 
+ Found in: <a href="">Link</a>
+</li>
+
+
+  <li class="list-group-item">
+<strong>  Clifton Forge, VA</strong><br />
+ ID: <br />
+ Reference: <a href="" target="_new"></a><br />
+ Occupation: <br />
+ 
+ Found in: <a href="">Link</a>
+</li>
+
+
+  <li class="list-group-item">
+<strong>  Covington, VA</strong><br />
+ ID: <br />
+ Reference: <a href="" target="_new"></a><br />
+ Occupation: <br />
+ 
+ Found in: <a href="">Link</a>
+</li>
+
+
+  <li class="list-group-item">
+<strong>  Danville, VA</strong><br />
+ ID: <br />
+ Reference: <a href="" target="_new"></a><br />
+ Occupation: <br />
+ 
+ Found in: <a href="">Link</a>
+</li>
+
+
+  <li class="list-group-item">
+<strong>  Eagle Rock, VA</strong><br />
+ ID: <br />
+ Reference: <a href="" target="_new"></a><br />
+ Occupation: <br />
+ 
+ Found in: <a href="">Link</a>
+</li>
+
+
+  <li class="list-group-item">
+<strong>  Hampton Roads Bridge Tunnel, VA</strong><br />
+ ID: <br />
+ Reference: <a href="" target="_new"></a><br />
+ Occupation: <br />
+ 
+ Found in: <a href="">Link</a>
+</li>
+
+
+  <li class="list-group-item">
+<strong>  James River, VA</strong><br />
+ ID: <br />
+ Reference: <a href="" target="_new"></a><br />
+ Occupation: <br />
+ 
+ Found in: <a href="">Link</a>
+</li>
+
+
+  <li class="list-group-item">
+<strong>  Jamestown, VA</strong><br />
+ ID: <br />
+ Reference: <a href="" target="_new"></a><br />
+ Occupation: <br />
+ 
+ Found in: <a href="">Link</a>
+</li>
+
+
+  <li class="list-group-item">
+<strong>  Lexington, VA</strong><br />
+ ID: <br />
+ Reference: <a href="" target="_new"></a><br />
+ Occupation: <br />
+ 
+ Found in: <a href="">Link</a>
+</li>
+
+
+  <li class="list-group-item">
+<strong>  Lynchburg, VA</strong><br />
+ ID: <br />
+ Reference: <a href="" target="_new"></a><br />
+ Occupation: <br />
+ 
+ Found in: <a href="">Link</a>
+</li>
+
+
+  <li class="list-group-item">
+<strong>  Natural Bridge, VA</strong><br />
+ ID: <br />
+ Reference: <a href="" target="_new"></a><br />
+ Occupation: <br />
+ 
+ Found in: <a href="">Link</a>
+</li>
+
+
+  <li class="list-group-item">
+<strong>  Norfolk, VA</strong><br />
+ ID: <br />
+ Reference: <a href="" target="_new"></a><br />
+ Occupation: <br />
+ 
+ Found in: <a href="">Link</a>
+</li>
+
+
+  <li class="list-group-item">
+<strong>  Portsmouth, VA</strong><br />
+ ID: <br />
+ Reference: <a href="" target="_new"></a><br />
+ Occupation: <br />
+ 
+ Found in: <a href="">Link</a>
+</li>
+
+
+  <li class="list-group-item">
+<strong>  Richmond-Petersburg Turnpike, VA</strong><br />
+ ID: <br />
+ Reference: <a href="" target="_new"></a><br />
+ Occupation: <br />
+ 
+ Found in: <a href="">Link</a>
+</li>
+
+
+  <li class="list-group-item">
+<strong>  Seattle, WA</strong><br />
+ ID: <br />
+ Reference: <a href="" target="_new"></a><br />
+ Occupation: <br />
+ 
+ Found in: <a href="">Link</a>
+</li>
+
+
+  <li class="list-group-item">
+<strong>  University of Virginia, Charlottesville, VA</strong><br />
+ ID: <br />
+ Reference: <a href="" target="_new"></a><br />
+ Occupation: <br />
+ 
+ Found in: <a href="">Link</a>
+</li>
+
+
+  <li class="list-group-item">
+<strong>  Virginia Military Institute, Lexington, VA</strong><br />
+ ID: <br />
+ Reference: <a href="" target="_new"></a><br />
+ Occupation: <br />
+ 
+ Found in: <a href="">Link</a>
+</li>
+
+
+  <li class="list-group-item">
+<strong>  Winchester, VA</strong><br />
+ ID: <br />
+ Reference: <a href="" target="_new"></a><br />
+ Occupation: <br />
+ 
+ Found in: <a href="">Link</a>
+</li>
+
+
+  <li class="list-group-item">
+<strong> Roanoke, VA</strong><br />
+ ID: <br />
+ Reference: <a href="" target="_new"></a><br />
+ Occupation: <br />
+ 
+ Found in: <a href="">Link</a>
+</li>
+
+
+  <li class="list-group-item">
+<strong> Rockbridge County, VA</strong><br />
+ ID: <br />
+ Reference: <a href="" target="_new"></a><br />
+ Occupation: <br />
+ 
+ Found in: <a href="">Link</a>
+</li>
+
+
+  <li class="list-group-item">
+<strong> Staunton, VA</strong><br />
+ ID: <br />
+ Reference: <a href="" target="_new"></a><br />
+ Occupation: <br />
+ 
+ Found in: <a href="">Link</a>
+</li>
+
+
+</ul>
+
+  </div>
+
+  
+
+<footer class="">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-4">
+          <a href=""><img src="/assets/img/jekyll-chantarelle.png"></a>
+      </div>
+      <div class="col-8">
+        <p class="align-middle">
+          <a class="light-link link-footer" href="">Link 1</a> | 
+          <a class="link-footer" href="">Link 2</a>
+        </p>
+
+      </div>
+    </div>
+  </div>
+</footer>
+    <script src="/assets/js/script.js"></script>
+    <script>
+      var map = L.map('map').setView([37.781091193577794, -79.44561074272947], 8);
+      L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    maxZoom: 19,
+    attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+      }).addTo(map);
+
+
+
+
+// Read markers data from data.csv
+  $.get('places.csv', function(csvString) {
+
+    // Use PapaParse to convert string to array of objects
+    var data = Papa.parse(csvString, {header: true, dynamicTyping: true}).data;
+
+    // For each row in data, create a marker and add it to the map
+    // For each row, columns `Latitude`, `Longitude`, and `Title` are required
+    for (var i in data) {
+      var row = data[i];
+
+      var marker = L.marker([row.Latitude, row.Longitude], {
+        opacity: 1
+      }).bindPopup(row.Name);
+      
+      marker.addTo(map);
+    }
+
+  });
+
+  function onEachFeature(feature, layer) {
+    // does this feature have a property named popupContent?
+    if (feature.properties && feature.properties.popupContent) {
+        layer.bindPopup(feature.properties.popupContent);
+    }
+}      
+
+
+    </script>
+  </body>
+</html>
